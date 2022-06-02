@@ -1,5 +1,5 @@
-# Analysis of Rodent Gambling Task (RGT) Data
-### This code accompanies a manuscript by Frankot, Young, and Vonder Haar in Perspectives on Behavioral Science. Here, we have compiled behavioral data from 5 preclinical experiments and provide reproducible examples of various techniques used to analyze the data. Our behavioral outcomes come from the RGT, which concurrently measures optimal, suboptimal, and risky decisions. For more information on the RGT or these datasets, see [our published works](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full).
+# Analysis of Large-N Rodent Gambling Task (RGT) Data
+### This code accompanies a manuscript by Frankot, Young, and Vonder Haar in Perspectives on Behavioral Science where we propose that large-N datasets should be used in behavior analysis to evaluate individual differences. Here, we have compiled behavioral data from 5 preclinical experiments and provide reproducible examples of various analytic techniques. Our behavioral outcomes come from the RGT, which concurrently measures optimal, suboptimal, and risky decisions. For more information on the RGT or these datasets, see [our published work](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full).
 
 
 ### We will begin by importing two datasets. 
@@ -171,4 +171,6 @@ ggplot(data=random, aes(x=Variable, y=Value))+
   theme_classic(base_size=20)
 ggsave("random_effects.png", width = 25, height = 25, units = "cm")
 ```
+<img src="https://github.com/mfrankz/RGT-PoBS/blob/main/random_effects.png" width="600">
+
 The random effects plot is a quick way of visually the vastly different choice profiles across individual subjects. We will now explore clustering techniques as a means to account for individual subject variability
