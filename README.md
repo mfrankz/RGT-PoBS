@@ -1,8 +1,8 @@
 # Analysis of Rodent Gambling Task (RGT) Data
-### This code accompanies a manuscript by Frankot, Young, and Vonder Haar in Perspectives on Behavioral Science. Here, we have compiled behavioral data from 5 preclinical experiments and provide reproducible examples of various techniques used to analyze the data. Our behavioral outcomes come from the RGT, which concurrently measures optimal, suboptimal, and risky decisions. For more information on the RGT or these datasets, see __________________. 
+### This code accompanies a manuscript by Frankot, Young, and Vonder Haar in Perspectives on Behavioral Science. Here, we have compiled behavioral data from 5 preclinical experiments and provide reproducible examples of various techniques used to analyze the data. Our behavioral outcomes come from the RGT, which concurrently measures optimal, suboptimal, and risky decisions. For more information on the RGT or these datasets, see [our published works]([https://github.com/mfrankz/microbiome/blob/main/ps.rds](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full)).
 
 
-#We will begin by importing two datasets. The first, RGT_data, contains behavioral data collapsed across five experiments. The second, RGT_biome, contains a subset of behavioral data accompanied by biological variables from measurement of the gut microbiome. The first section contains an explanation of variables in the dataset. Then, we will perform the following analyses: 
+# We will begin by importing two datasets. The first, RGT_data, contains behavioral data collapsed across five experiments. The second, RGT_biome, contains a subset of behavioral data accompanied by biological variables from measurement of the gut microbiome. The first section contains an explanation of variables in the dataset. Then, we will perform the following analyses: 
 ### 1. Correlational analyses
 ### 2. Mixed-effects modeling
 ### 3. K-means clustering 
@@ -42,3 +42,42 @@ This dataset contains behavioral RGT data and a measurement of the gut microbiom
 
 
 # Correlational analyses
+
+Correlational analyses are useful for analyzing continuous biological variables. Here we will correlate our microbiome measurement (alpha diversity) with behavioral outcomes
+
+```
+#prep variables
+RGT_biome$Injury<-as.factor(RGT_biome$Injury)
+RGT_biome$Collect_Time<-as.factor(RGT_biome$Collect_Time)
+RGT_biome$Week <- as.numeric(RGT_biome$Week) 
+```
+We will first run simple Pearson bivariate correlations between alpha diversity and optimal choice
+```
+#alpha diversity x optimal choice
+cor.test(RGT_biome$alpha_diversity, RGT_biome$PctOptimal)
+
+	Pearson's product-moment correlation
+
+data:  RGT_biome$alpha_diversity and RGT_biome$PctOptimal
+t = 4.2171, df = 854, p-value = 2.738e-05
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.07655315 0.20784596
+sample estimates:
+      cor 
+0.1428278 
+```
+The output shows that the correlation is significant but not particularly strong, r=0.14, p < 0.001
+We can get a better idea of the relationship from a plot of the data
+
+```
+ggplot(data=RGT_biome, aes(x=alpha_diversity, y=PctOptimal))+
+  geom_smooth()+
+  theme_classic()
+ggplot(data=RGT_biome, aes(x=alpha_diversity, y=PctOptimal))+
+  geom_point()+ #add individual-subject data
+  geom_smooth()+
+  theme_classic()
+```
+These plots support the conclusion that the correlation across these variables is not particularly robust
+
