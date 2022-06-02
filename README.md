@@ -159,3 +159,16 @@ library(lmerTest) #library is necessary for p-value calculation
 summary(slope)
 ranef(slope)
 ```
+```
+#plot random effects
+random<-ranef(slope)$Subject
+random$Subject<-rownames(random)
+random<-tidyr::gather(random, "Variable", "Value", 1:4, factor_key = T)
+ggplot(data=random, aes(x=Variable, y=Value))+
+  geom_violin()+
+  geom_point(size=1, alpha=0.5)+
+  ylab("Standardized Value")+
+  theme_classic(base_size=20)
+ggsave("random_effects.png", width = 25, height = 25, units = "cm")
+```
+The random effects plot is a quick way of visually the vastly different choice profiles across individual subjects. We will now explore clustering techniques as a means to account for individual subject variability
