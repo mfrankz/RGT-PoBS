@@ -7,8 +7,10 @@
 Also note that the data provided here in a subset that has been adapted for this tutorial. You can find the full published dataset [here](https://odc-tbi.org/data/703)
 
 ```
-RGT_data <- read_csv("RGT_data.csv") #full behavioral set from 5 RGT experiments
-RGT_biome <- read_csv("RGT_biome.csv") #subset of RGT data with biological variables (gut microbiome)
+#note: to read in data, set your working directory to the folder containing these data files
+RGT_data <- read.csv("RGT_data.csv") #full behavioral set from 5 RGT experiments
+RGT_biome <- read.csv("RGT_biome.csv") #subset of RGT data with biological variables (gut microbiome)
+library(ggplot2
 
 ```
 ### The first, RGT_data, contains behavioral data collapsed across five experiments. The second, RGT_biome, contains a subset of behavioral data accompanied by biological variables from measurement of the gut microbiome. Our tutorial for these data consists of the following sections
