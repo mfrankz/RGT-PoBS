@@ -8,7 +8,7 @@ If you would like to skip the tutorial and just access the code, click [here](ht
 
 *Note that the data provided here are a subset that has been adapted for this tutorial. You can find the full published dataset [here](https://odc-tbi.org/data/703)*
 
-###Place the downloaded files into a folder, and use the following code to import both datasets into RStudio:
+### Place the downloaded files into a folder, and use the following code to import both datasets into RStudio:
 
 ```
 #note: to read in data, set your working directory to the folder containing these data files
