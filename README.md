@@ -2,16 +2,18 @@
 ### This code accompanies a manuscript by Frankot, Young, and Vonder Haar in Perspectives on Behavioral Science. Here, we have compiled behavioral data from 5 preclinical experiments and provide reproducible examples of various techniques used to analyze the data. Our behavioral outcomes come from the RGT, which concurrently measures optimal, suboptimal, and risky decisions. For more information on the RGT or these datasets, see [our published works](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full).
 
 
-### We will begin by importing two datasets. The first, RGT_data, contains behavioral data collapsed across five experiments. The second, RGT_biome, contains a subset of behavioral data accompanied by biological variables from measurement of the gut microbiome. The first section contains an explanation of variables in the dataset. Then, we will perform the following analyses: 
-### 1. Correlational analyses
-### 2. Mixed-effects modeling
-### 3. K-means clustering 
+### We will begin by importing two datasets. 
 
 ```
 RGT_data <- read_csv("RGT_data.csv") #full behavioral set from 5 RGT experiments
 RGT_biome <- read_csv("RGT_biome.csv") #subset of RGT data with biological variables (gut microbiome)
 
 ```
+### The first, RGT_data, contains behavioral data collapsed across five experiments. The second, RGT_biome, contains a subset of behavioral data accompanied by biological variables from measurement of the gut microbiome. The first section contains an explanation of variables in the dataset. Then, we will perform the following analyses: 
+## 1. Correlational analyses
+## 2. Mixed-effects modeling
+## 3. K-means clustering 
+
 
 # Explanation of variables in dataset
 
