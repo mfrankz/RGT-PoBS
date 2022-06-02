@@ -2,7 +2,9 @@
 ### This code accompanies a manuscript by Frankot, Young, and Vonder Haar in Perspectives on Behavioral Science where we propose that large-N datasets should be used in behavior analysis to evaluate individual differences. Here, we have compiled behavioral data from 5 preclinical experiments and provide reproducible examples of various analytic techniques. Our behavioral outcomes come from the RGT, which concurrently measures optimal, suboptimal, and risky decisions. For more information on the RGT or these datasets, see [our published work](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full).
 
 
-### We will begin by importing two datasets which can be found [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_data.csv) and [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_biome.csv) . 
+### We will begin by importing two datasets which can be found [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_data.csv) and [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_biome.csv).
+
+Also note that the data provided here in a subset that has been adapted for this tutorial. You can find the full published dataset [here](https://odc-tbi.org/data/703)
 
 ```
 RGT_data <- read_csv("RGT_data.csv") #full behavioral set from 5 RGT experiments
@@ -194,4 +196,19 @@ fviz_nbclust(wide[,-c(1)], kmeans, method = "wss") +
   geom_line(aes(group = 1), size = 3) + 
   ylab("Within Sum of Squares")
 ```
+<img src="https://github.com/mfrankz/RGT-PoBS/blob/main/cluster_number.png" width="600">
+Based on this plot, and other considerations outlined in a more thorough analysis (linked [here](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full)), we selected 5 as our cluster number.
 
+We can now create the 5 clusters and plot a quick PCA
+```
+#create and plot clusters
+Clusters<-kmeans(wide[,-c(1)], 5, iter.max=200, nstart=30)
+fviz_cluster(Clusters, data=wide[,-c(1)])+
+  ggtitle("PCA on Clusters")+
+  scale_colour_manual(values = c("#0987D7", "#F46764", "#0DBD51",  "#9A1F09", "#DDB91C"))+
+  scale_fill_manual(values = c("#0987D7", "#F46764", "#0DBD51",  "#9A1F09", "#DDB91C"))+
+  scale_shape_manual(values=c(19, 15, 17, 18, 3))+
+  xlab("Axis 1")+
+  ylab("Axis 2")+
+  theme_bw()
+```
