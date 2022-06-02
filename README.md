@@ -65,9 +65,9 @@ cor.test(RGT_biome$alpha_diversity, RGT_biome$PctOptimal)
 ```
 
 
-	>Pearson's product-moment correlation
+>	Pearson's product-moment correlation
 >data:  RGT_biome$alpha_diversity and RGT_biome$PctOptimal
->t = 4.2171, df = 854, p-value = 2.738e-05
+t = 4.2171, df = 854, p-value = 2.738e-05
 alternative hypothesis: true correlation is not equal to 0
 95 percent confidence interval:
 0.07655315 0.20784596
