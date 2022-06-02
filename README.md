@@ -207,7 +207,7 @@ fviz_nbclust(wide[,-c(1)], kmeans, method = "wss") +
   ylab("Within Sum of Squares")
 ```
 <img src="https://github.com/mfrankz/RGT-PoBS/blob/main/cluster_number.png" width="600">
-Based on this plot, and other considerations outlined in a more thorough [analysis](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full), we selected 5 as our cluster number.
+Based on this plot, and other considerations outlined in a more thorough [analysis](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full) , we selected 5 as our cluster number.
 
 We can now create the 5 clusters and plot a quick PCA
 ```
