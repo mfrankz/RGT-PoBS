@@ -64,9 +64,10 @@ We will first run simple Pearson bivariate correlations between alpha diversity 
 cor.test(RGT_biome$alpha_diversity, RGT_biome$PctOptimal)
 ```
 
-
-<	Pearson's product-moment correlation>
->data:  RGT_biome$alpha_diversity and RGT_biome$PctOptimal
+*OUTPUT*
+```
+	Pearson's product-moment correlation>
+data:  RGT_biome$alpha_diversity and RGT_biome$PctOptimal
 t = 4.2171, df = 854, p-value = 2.738e-05
 alternative hypothesis: true correlation is not equal to 0
 95 percent confidence interval:
@@ -74,6 +75,7 @@ alternative hypothesis: true correlation is not equal to 0
 sample estimates:
       cor    
 0.1428278
+```
 
 
 The output shows that the correlation is significant but not particularly strong, r=0.14, p < 0.001
@@ -111,6 +113,7 @@ m2<-lmer(scale(asin(sqrt(PctPremature/100))) ~
 anova(m1, m2) #compare models 
 ```
 The output (below) shows that the models are similar, but adding alpha diversity does improve model fit, p = 0.045
+*OUTPUT*
 ```
 Data: subset(RGT_biome, Collect_Time == "D3")
 Models:
@@ -150,6 +153,7 @@ fixed=lm(scale(asin(sqrt(PctChoice/100)))~ChoiceOption*Injury*scale(Session), da
 anova(slope, int, fixed)
 ```
 The output here shows that the mixed models outperform the fixed effect only model. Among the mixed models, the model that allows both the slope and intercept to vary explains much more variance in behavior
+*OUTPUT*
 ```
 
       npar     AIC     BIC  logLik deviance  Chisq Df Pr(>Chisq)    
