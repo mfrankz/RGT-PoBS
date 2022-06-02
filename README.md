@@ -4,7 +4,7 @@
 If you would like to skip the tutorial and just access the code, click [here](https://github.com/mfrankz/RGT-PoBS/blob/main/PoBS%20code.R).
 
 
-### To begin the tutorial, begin by downloading two datasets which can be found [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_data.rds) and [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_biome.rds).
+### To begin the tutorial, download our two datasets which can be found [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_data.rds) and [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_biome.rds).
 
 *Also note that the data provided here are a subset that has been adapted for this tutorial. You can find the full published dataset [here](https://odc-tbi.org/data/703)*
 
