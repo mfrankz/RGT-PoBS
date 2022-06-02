@@ -66,8 +66,7 @@ We will first run simple Pearson bivariate correlations between alpha diversity 
 cor.test(RGT_biome$alpha_diversity, RGT_biome$PctOptimal)
 ```
 
-*OUTPUT*
-```
+OUTPUT:```
 	Pearson's product-moment correlation>
 data:  RGT_biome$alpha_diversity and RGT_biome$PctOptimal
 t = 4.2171, df = 854, p-value = 2.738e-05
