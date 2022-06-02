@@ -64,7 +64,7 @@ We will first run simple Pearson bivariate correlations between alpha diversity 
 cor.test(RGT_biome$alpha_diversity, RGT_biome$PctOptimal)
 ```
 
->
+```
 	Pearson's product-moment correlation
 data:  RGT_biome$alpha_diversity and RGT_biome$PctOptimal
 t = 4.2171, df = 854, p-value = 2.738e-05
@@ -74,7 +74,7 @@ alternative hypothesis: true correlation is not equal to 0
 sample estimates:
       cor    
 0.1428278 
->
+```
 
 The output shows that the correlation is significant but not particularly strong, r=0.14, p < 0.001
 We can get a better idea of the relationship from a plot of the data
