@@ -10,10 +10,10 @@ RGT_biome <- read_csv("RGT_biome.csv") #subset of RGT data with biological varia
 
 ```
 ### The first, RGT_data, contains behavioral data collapsed across five experiments. The second, RGT_biome, contains a subset of behavioral data accompanied by biological variables from measurement of the gut microbiome. Our tutorial for these data consists of the following sections
-# 1. Explanation of variables in dataset
-# 2. Correlational analyses
-# 3. Mixed-effects modeling
-# 4. K-means clustering 
+1. Explanation of variables in dataset
+2. Correlational analyses
+3. Mixed-effects modeling
+4. K-means clustering 
 
 
 # 1. Explanation of variables in dataset
@@ -174,3 +174,24 @@ ggsave("random_effects.png", width = 25, height = 25, units = "cm")
 <img src="https://github.com/mfrankz/RGT-PoBS/blob/main/random_effects.png" width="600">
 
 The random effects plot is a quick way of visually the vastly different choice profiles across individual subjects. We will now explore clustering techniques as a means to account for individual subject variability
+
+
+# 3. K-means clustering
+K-means is a distance-based algorithm that can be used to divide data into distinct clusters. To perform k-means clustering, we will first format the data by aggregating across sessions and transforming the data frame to wide format.
+
+```
+#format data
+temp<-aggregate(PctChoice~Subject+ChoiceOption, mean, data=data)
+wide<-spread(temp, ChoiceOption, PctChoice, fill = NA, convert = FALSE)
+```
+
+Now, we will plot the error variance as a function of a variety of cluster numbers
+```
+library(factoextra)
+fviz_nbclust(wide[,-c(1)], kmeans, method = "wss") +
+  ggtitle("Optimal Cluster Number")+
+  geom_point(aes(group = 1),size=10)+
+  geom_line(aes(group = 1), size = 3) + 
+  ylab("Within Sum of Squares")
+```
+
