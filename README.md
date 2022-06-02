@@ -10,7 +10,7 @@
 #note: to read in data, set your working directory to the folder containing these data files
 RGT_data <- readRDS("RGT_data.rds") #full behavioral set from 5 RGT experiments
 RGT_biome <- readRDS("RGT_biome.rds") 
-library(ggplot2
+library(ggplot2)
 
 ```
 ### The first, RGT_data, contains behavioral data collapsed across five experiments. The second, RGT_biome, contains a subset of behavioral data accompanied by biological variables from measurement of the gut microbiome. Our tutorial for these data consists of the following sections
