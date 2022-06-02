@@ -212,3 +212,18 @@ fviz_cluster(Clusters, data=wide[,-c(1)])+
   ylab("Axis 2")+
   theme_bw()
 ```
+<img src="https://github.com/mfrankz/RGT-PoBS/blob/main/cluster_PCA.png" width="600">
+
+To get a more meaningful interpreration of the clusters, we will merge them back in with the raw data and plot.
+```
+#merge clusters back in with original data for plotting
+clust_data<-cbind(temp, cluster=Clusters$cluster)
+clust_data$ChoiceOption<-relevel(clust_data$ChoiceOption, ref="1")
+ggplot(data=clust_data, aes(x=ChoiceOption, y=PctChoice))+   
+  geom_point(size=2, alpha=0.6)+
+  stat_summary(aes(group=cluster), size=2, fun=mean, geom="line")+
+  facet_wrap(~cluster)+
+  ylab("Percent Choice")+
+  theme_bw(base_size=20)
+  ```
+  
