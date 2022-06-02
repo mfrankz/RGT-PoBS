@@ -239,4 +239,4 @@ ggplot(data=clust_data, aes(x=ChoiceOption, y=PctChoice))+
   ```
 <img src="https://github.com/mfrankz/RGT-PoBS/blob/main/cluster_profiles.png" width="600">
 
-Based on this plot, we can define our clusters. The x-axis shows the 4 choices on the RGT where Choice 1 is suboptimal, Choice 2 is optimal, and Choice 3 and 4 are risky (deliver 3 pellets and 4 pellets respectively on a win trial). Thus, we defined our clusters as exploratory (Panel 1), optimal (Panel 2), risk-preferring for 3-pellet option (Panel 3), risk-preferring for 4-pellet option (Panel 4), and suboptimal/indiscriminate (Panel 5). Note that your panels might not be in the same order.
+Based on this plot, we can define our clusters. The x-axis shows the 4 choices on the RGT where Choice 1 is suboptimal, Choice 2 is optimal, and Choice 3 and 4 are risky. Thus, we defined our clusters as exploratory (Panel 1), optimal (Panel 2), risk-preferring for 3-pellet option (Panel 3), risk-preferring for 4-pellet option (Panel 4), and suboptimal/indiscriminate (Panel 5). Note that your panels might not be in the same order.
