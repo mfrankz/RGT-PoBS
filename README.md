@@ -80,7 +80,7 @@ sample estimates:
 ```
 
 
-The output shows that the correlation is significant but not particularly strong, r=0.14, p < 0.001
+The output shows that the correlation is significant but not particularly strong, r=0.14, p < 0.001.
 We can get a better idea of the relationship from a plot of the data
 
 ```
