@@ -13,7 +13,7 @@ RGT_biome <- readRDS("RGT_biome.rds")
 library(ggplot2)
 
 ```
-### The first objecg, RGT_data, contains behavioral data collapsed across five experiments. The second, RGT_biome, contains a subset of behavioral data accompanied by biological variables from measurement of the gut microbiome. Our tutorial for these data consists of the following sections
+### The first object, RGT_data, contains behavioral data collapsed across five experiments. The second, RGT_biome, contains a subset of behavioral data accompanied by biological variables from measurement of the gut microbiome. Our tutorial for these data consists of the following sections
 1. Explanation of variables in dataset
 2. Correlational analyses
 3. Mixed-effects modeling
@@ -207,7 +207,7 @@ fviz_nbclust(wide[,-c(1)], kmeans, method = "wss") +
   ylab("Within Sum of Squares")
 ```
 <img src="https://github.com/mfrankz/RGT-PoBS/blob/main/cluster_number.png" width="600">
-Based on this plot, and other considerations outlined in a more thorough [analysis](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full) , we selected 5 as our cluster number.
+Based on this plot, and other [considerations](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full) , we selected 5 as our cluster number.
 
 We can now create the 5 clusters and plot a quick PCA
 ```
