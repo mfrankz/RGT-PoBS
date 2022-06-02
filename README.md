@@ -117,4 +117,45 @@ m2   11 534.16 571.19 -256.08   512.16 9.7128  4    0.04555 *
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 ```
+We will now switch to the RGT_data to perform more complex statistical analyses.
 
+
+# 2. Mixed-effects modeling
+
+To illustrate why mixed-effects (also called multi-level, random effects) modeling is important for nested data, we will compare a fixed-effects model against 2 mixed models.
+
+```
+#subset to stable post-injury data only and prep variables
+data=subset(RGT_data, Session>10 & Session<21)
+data$ChoiceOption<-as.factor(data$ChoiceOption)
+data$ChoiceOption<-relevel(data$ChoiceOption, ref="2")
+data$Injury<-as.factor(data$Injury)
+```
+
+```
+#compare fixed effect versus intercept-only versus random slope+intercept models
+library(lme4)
+slope=lmer(scale(asin(sqrt(PctChoice/100)))~ChoiceOption*Injury*scale(Session)+
+            (1+ChoiceOption|Subject), 
+            control = lmerControl(calc.derivs = FALSE),
+            data=data)
+int=lmer(scale(asin(sqrt(PctChoice/100)))~ChoiceOption*Injury*scale(Session)+
+           (0+dummy(ChoiceOption, "2")|Subject), data=data)
+fixed=lm(scale(asin(sqrt(PctChoice/100)))~ChoiceOption*Injury*scale(Session), data=data)
+anova(slope, int, fixed)
+```
+The output here shows that the mixed models outperform the fixed effect only model. Among the mixed models, the model that allows both the slope and intercept to vary explains much more variance in behavior
+```
+
+      npar     AIC     BIC  logLik deviance  Chisq Df Pr(>Chisq)    
+fixed   17 18743.7 18863.6 -9354.8  18709.7                         
+int     18 16430.9 16557.9 -8197.4  16394.9 2314.8  1  < 2.2e-16 ***
+slope   27  7941.4  8131.9 -3943.7   7887.4 8507.5  9  < 2.2e-16 ***
+---
+```
+Based on these findings, we will look at the regression coefficients for the random slope + intercept model
+```
+library(lmerTest) #library is necessary for p-value calculation
+summary(slope)
+ranef(slope)
+```
