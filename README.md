@@ -1,10 +1,14 @@
 # Analysis of Large-N Rodent Gambling Task (RGT) Data
-### This code accompanies a manuscript by Frankot, Young, and Vonder Haar in Perspectives on Behavioral Science where we propose that large-N datasets should be used in behavior analysis to evaluate individual differences. Here, we have compiled behavioral data from 5 preclinical experiments and provide reproducible examples of various analytic techniques. Our behavioral outcomes come from the RGT, which concurrently measures optimal, suboptimal, and risky decisions. For more information on the RGT or these datasets, see [our published work](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full).
+### This tutorial accompanies a manuscript by Frankot, Young, and Vonder Haar in Perspectives on Behavioral Science where we propose that large-N datasets should be used in behavior analysis to evaluate individual differences. Here, we have compiled behavioral data from 5 preclinical experiments and provide reproducible examples of various analytic techniques. Our behavioral outcomes come from the RGT, which concurrently measures optimal, suboptimal, and risky decisions. For more information on the RGT or these datasets, see [our published work](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full).
+
+If you would like to skip the tutorial and just access the code, click [here](https://github.com/mfrankz/RGT-PoBS/blob/main/PoBS%20code.R).
 
 
-### We will begin by importing two datasets which can be found [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_data.rds) and [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_biome.rds).
+### To begin the tutorial, begin by downloading two datasets which can be found [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_data.rds) and [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_biome.rds).
 
 *Also note that the data provided here are a subset that has been adapted for this tutorial. You can find the full published dataset [here](https://odc-tbi.org/data/703)*
+
+Place the downloaded files into a folder, and use the following code to import both datasets into RStudio:
 
 ```
 #note: to read in data, set your working directory to the folder containing these data files
