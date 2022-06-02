@@ -79,5 +79,7 @@ ggplot(data=RGT_biome, aes(x=alpha_diversity, y=PctOptimal))+
   geom_smooth()+
   theme_classic()
 ```
+<img src="https://github.com/mfrankz/RGT-PoBS/blob/main/correlation.png" width="600">
+
 These plots support the conclusion that the correlation across these variables is not particularly robust
 
