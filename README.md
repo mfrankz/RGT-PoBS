@@ -28,7 +28,7 @@ library(ggplot2)
 
 *On the RGT, rats are allowed to freely choose between 4 holes in an operant chamber across several trials within a session. Each choice is either reinforced with sugar pellets or punished with a timeout from reinforcement. Each choice is associated with a different probability/magnitude of reinforcement/punishment, making Choice 1 (delivers 1 pellet on a win trial) subtoptimal, Choice 2 (2 pellets on a win trial) optimal, and Choices 3 and 4 (3 and 4 pellets on a win trial) risky.*
 
-### Variables in RGT_data
+### Variables in first dataset (RGT_data):
 *This dataset contains the count and % level of choice of the 4 options on the RGT*
 1. Study_ID: study codes for 5 different experiments compiled for this project
 2. Subject: unique subject identifiers
@@ -39,7 +39,7 @@ library(ggplot2)
 7. TotChoice: total number of choices made within each subject/session
 8. PctChoice: percent choice of any given option (i.e., (ChoiceCount/TotChoice)x100)
 
-### Variables in RGT_biome
+### Variables in second dataset (RGT_biome):
 *This dataset contains behavioral RGT data and a measurement of the gut microbiome*
 1. Subject: unique subject identifier
 2. Injury: TBI (traumatic brain injury) versus Sham (intact/control)
