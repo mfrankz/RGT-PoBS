@@ -4,7 +4,7 @@
 
 ### We will begin by importing two datasets which can be found [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_data.csv) and [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_biome.csv).
 
-Also note that the data provided here in a subset that has been adapted for this tutorial. You can find the full published dataset [here](https://odc-tbi.org/data/703)
+*Also note that the data provided here in a subset that has been adapted for this tutorial. You can find the full published dataset [here](https://odc-tbi.org/data/703)*
 
 ```
 #note: to read in data, set your working directory to the folder containing these data files
@@ -23,7 +23,7 @@ library(ggplot2
 # 1. Explanation of variables in dataset
 
 ### Variables in RGT_data
-This dataset contains the count and % level of choice of the 4 options on the RGT
+*This dataset contains the count and % level of choice of the 4 options on the RGT*
 1. Study_ID: study codes for 5 different experiments compiled for this project
 2. Subject: unique subject identifiers
 3. Injury: TBI (traumatic brain injury) versus Sham (intact/control)
@@ -34,7 +34,7 @@ This dataset contains the count and % level of choice of the 4 options on the RG
 8. PctChoice: percent choice of any given option (i.e., (ChoiceCount/TotChoice)x100)
 
 ### Variables in RGT_biome
-This dataset contains behavioral RGT data and a measurement of the gut microbiome
+*This dataset contains behavioral RGT data and a measurement of the gut microbiome*
 1. Subject: unique subject identifier
 2. Injury: TBI (traumatic brain injury) versus Sham (intact/control)
 3. Biome_SampleID: unique identifier for microbiome sample. Samples were collected at 4 timepoints
@@ -63,18 +63,18 @@ We will first run simple Pearson bivariate correlations between alpha diversity 
 #alpha diversity x optimal choice
 cor.test(RGT_biome$alpha_diversity, RGT_biome$PctOptimal)
 ```
-```
-	Pearson's product-moment correlation
+>
+>	Pearson's product-moment correlation
+>
+>data:  RGT_biome$alpha_diversity and RGT_biome$PctOptimal
+>t = 4.2171, df = 854, p-value = 2.738e-05
+>alternative hypothesis: true correlation is not equal to 0
+>95 percent confidence interval:
+> 0.07655315 0.20784596
+>sample estimates:
+>      cor 
+>0.1428278 
 
-data:  RGT_biome$alpha_diversity and RGT_biome$PctOptimal
-t = 4.2171, df = 854, p-value = 2.738e-05
-alternative hypothesis: true correlation is not equal to 0
-95 percent confidence interval:
- 0.07655315 0.20784596
-sample estimates:
-      cor 
-0.1428278 
-```
 The output shows that the correlation is significant but not particularly strong, r=0.14, p < 0.001
 We can get a better idea of the relationship from a plot of the data
 
@@ -186,7 +186,7 @@ K-means is a distance-based algorithm that can be used to divide data into disti
 ```
 #format data
 temp<-aggregate(PctChoice~Subject+ChoiceOption, mean, data=data)
-wide<-spread(temp, ChoiceOption, PctChoice, fill = NA, convert = FALSE)
+wide<-tidyr::spread(temp, ChoiceOption, PctChoice, fill = NA, convert = FALSE)
 ```
 
 Now, we will plot the error variance as a function of a variety of cluster numbers
