@@ -2,7 +2,7 @@
 ### This code accompanies a manuscript by Frankot, Young, and Vonder Haar in Perspectives on Behavioral Science where we propose that large-N datasets should be used in behavior analysis to evaluate individual differences. Here, we have compiled behavioral data from 5 preclinical experiments and provide reproducible examples of various analytic techniques. Our behavioral outcomes come from the RGT, which concurrently measures optimal, suboptimal, and risky decisions. For more information on the RGT or these datasets, see [our published work](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full).
 
 
-### We will begin by importing two datasets. 
+### We will begin by importing two datasets which can be found [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_data.csv) and [here](https://github.com/mfrankz/RGT-PoBS/blob/main/RGT_biome.csv) . 
 
 ```
 RGT_data <- read_csv("RGT_data.csv") #full behavioral set from 5 RGT experiments
