@@ -13,7 +13,7 @@ RGT_biome <- readRDS("RGT_biome.rds")
 library(ggplot2)
 
 ```
-### The first, RGT_data, contains behavioral data collapsed across five experiments. The second, RGT_biome, contains a subset of behavioral data accompanied by biological variables from measurement of the gut microbiome. Our tutorial for these data consists of the following sections
+### The first objecg, RGT_data, contains behavioral data collapsed across five experiments. The second, RGT_biome, contains a subset of behavioral data accompanied by biological variables from measurement of the gut microbiome. Our tutorial for these data consists of the following sections
 1. Explanation of variables in dataset
 2. Correlational analyses
 3. Mixed-effects modeling
