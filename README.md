@@ -9,13 +9,14 @@ RGT_data <- read_csv("RGT_data.csv") #full behavioral set from 5 RGT experiments
 RGT_biome <- read_csv("RGT_biome.csv") #subset of RGT data with biological variables (gut microbiome)
 
 ```
-### The first, RGT_data, contains behavioral data collapsed across five experiments. The second, RGT_biome, contains a subset of behavioral data accompanied by biological variables from measurement of the gut microbiome. The first section contains an explanation of variables in the dataset. Then, we will perform the following analyses: 
-## 1. Correlational analyses
-## 2. Mixed-effects modeling
-## 3. K-means clustering 
+### The first, RGT_data, contains behavioral data collapsed across five experiments. The second, RGT_biome, contains a subset of behavioral data accompanied by biological variables from measurement of the gut microbiome. Our tutorial for these data consists of the following sections
+## 1. Explanation of variables in dataset
+## 2. Correlational analyses
+## 3. Mixed-effects modeling
+## 4. K-means clustering 
 
 
-# Explanation of variables in dataset
+# 1. Explanation of variables in dataset
 
 ### Variables in RGT_data
 This dataset contains the count and % level of choice of the 4 options on the RGT
@@ -43,7 +44,7 @@ This dataset contains behavioral RGT data and a measurement of the gut microbiom
 
 
 
-# Correlational analyses
+# 2. Correlational analyses
 
 Correlational analyses are useful for analyzing continuous biological variables. Here we will correlate our microbiome measurement (alpha diversity) with behavioral outcomes
 
