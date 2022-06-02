@@ -114,7 +114,8 @@ m2<-lmer(scale(asin(sqrt(PctPremature/100))) ~
           data=subset(RGT_biome, Collect_Time=="D3"))
 anova(m1, m2) #compare models 
 ```
-The output (below) shows that the models are similar, but adding alpha diversity does improve model fit, p = 0.045
+The output (below) shows that the models are similar, but adding alpha diversity does improve model fit, p = 0.045.
+
 OUTPUT:
 ```
 Data: subset(RGT_biome, Collect_Time == "D3")
@@ -154,7 +155,8 @@ int=lmer(scale(asin(sqrt(PctChoice/100)))~ChoiceOption*Injury*scale(Session)+
 fixed=lm(scale(asin(sqrt(PctChoice/100)))~ChoiceOption*Injury*scale(Session), data=data)
 anova(slope, int, fixed)
 ```
-The output here shows that the mixed models outperform the fixed effect only model. Among the mixed models, the model that allows both the slope and intercept to vary explains much more variance in behavior
+The output here shows that the mixed models outperform the fixed effect only model. Among the mixed models, the model that allows both the slope and intercept to vary explains much more variance in behavior.
+
 OUTPUT:
 ```
 
