@@ -8,8 +8,8 @@
 
 ```
 #note: to read in data, set your working directory to the folder containing these data files
-RGT_data <- read.csv("RGT_data.csv") #full behavioral set from 5 RGT experiments
-RGT_biome <- read.csv("RGT_biome.csv") #subset of RGT data with biological variables (gut microbiome)
+RGT_data <- readRDS("RGT_data.rds") #full behavioral set from 5 RGT experiments
+RGT_biome <- readRDS("RGT_biome.rds") 
 library(ggplot2
 
 ```
