@@ -98,7 +98,7 @@ ggplot(data=RGT_biome, aes(x=alpha_diversity, y=PctOptimal))+
 ```
 <img src="https://github.com/mfrankz/RGT-PoBS/blob/main/correlation.png" width="600">
 
-These plots support the conclusion that the correlation across these variables is not particularly robust
+These plots support the conclusion that the correlation across these variables is not particularly robust (and that their potential relationship might not be linear)
 
 Sometimes, more complex regression models are needed to perform correlational analyses. For example, if we wanted to determine whether alpha diversity explains variance in behavior beyond the variance explained by TBI, we would need to perform a linear mixed model. The code for this analysis is provided here, and more information on mixed-effects modeling is provided in the section below. 
 
