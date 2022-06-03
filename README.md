@@ -137,7 +137,12 @@ We will now switch to the RGT_data to perform more complex statistical analyses.
 
 # 2. Mixed-effects modeling
 
-To illustrate why mixed-effects (also called multi-level, random effects) modeling is important for nested data, we will compare a fixed-effects model against 2 mixed models.
+A mixed-effects model incorporates “fixed” effects, which have a systematic effect on the outcome variable that is constant across individuals (e.g., group-level effects of an independent variable), and “random” effects, which occur when levels of a variable are sampled from a larger population (e.g., individual patient effects, testing site effects). 
+
+When repeated measurements are nested within subjects, mixed models allow for regression parameters to vary by subject. A random intercept term allows each subject to differ at baseline, and a random slope term allows each subject to vary across a within-subject effect.
+
+
+To illustrate why mixed-effects (also called multi-level, random effects) modeling is important for nested data, we will compare a fixed-effects model against 2 mixed models (a random intercept-only model and a random slope+intercept model).
 
 ```
 #subset to stable post-injury data only and prep variables
