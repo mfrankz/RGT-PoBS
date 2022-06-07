@@ -1,5 +1,5 @@
 # Analysis of Large-N Rodent Gambling Task (RGT) Data
-### This tutorial accompanies a manuscript by Frankot, Young, and Vonder Haar in Perspectives on Behavioral Science where we propose that large-N datasets should be used in behavior analysis to evaluate individual differences. Here, we have compiled behavioral data from 5 preclinical experiments and provide reproducible examples of various analytic techniques. Our behavioral outcomes come from the RGT, which concurrently measures optimal, suboptimal, and risky decisions. For more information on the RGT or these datasets, see [our published work](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full).
+### This code accompanies a manuscript by Frankot, Young, and Vonder Haar in Perspectives on Behavior Science where we advocate for the use of large-N datasets in behavior analysis to study individual differences. Here, we have compiled behavior from 5 preclinical experiments and provide reproducible examples of various analytic techniques. Our behavioral outcomes come from the RGT, which concurrently measures optimal, suboptimal, and risky decisions. For more information on the RGT or these datasets, see [our published work](https://www.frontiersin.org/articles/10.3389/fnbeh.2022.837654/full).
 
 If you would like to skip the tutorial and just access the code, click [here](https://github.com/mfrankz/RGT-PoBS/blob/main/PoBS%20code.R).
 
@@ -142,7 +142,8 @@ A mixed-effects model incorporates “fixed” effects, which have a systematic 
 When repeated measurements are nested within subjects, mixed models allow for regression parameters to vary by subject. A random intercept term allows each subject to differ at baseline, and a random slope term allows each subject to vary across a within-subject effect.
 
 
-To illustrate why mixed-effects (also called multi-level, random effects) modeling is important for nested data, we will compare a fixed-effects model against 2 mixed models (a random intercept-only model and a random slope+intercept model).
+To illustrate why mixed-effects (also called multi-level, random effects) modeling is important for nested data, we will compare a fixed-effects model against 2 mixed models (a random intercept-only model and a random slope+intercept model). 
+*Note that the fixed and intercept-only models are not appropriate for the structure of our data, but we have provided example code below*
 
 ```
 #subset to stable post-injury data only and prep variables
